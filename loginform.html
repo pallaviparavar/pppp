@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <title> login form </title>
+
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+    </head>
+    <body style="background-color: burlywood">
+        <div id="form-section">
+            <h2 style="text-align:center;"> LOGIN FORM</h2>
+            <form id="login-form">
+                <label for="name"> USERNAME:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email"> EMAIL:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password"> PASSWORD:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <label for="address">ADDRESS:</label>
+                 <input type="address" id="address" name="address" required><br><br>
+                 <label for="branch">BRANCH:</label>
+                 
+                 <select name="branch" id="branch">
+                 
+                    <option value="CS">CS</option>
+                    <option value="EC">EC</option>
+                    <option value="EE">EE</option>
+                 </select><br><br>
+                <button type="submit"> SUBMIT</button>
+            </form>
+        </div>
+
+        <div id="display-sec" class="hidden">
+            <h2> SUCCESFULLY LOGIN </h2>
+            <p id="display-name"></p>
+            <P id="display-email"></P>
+            <P id="display-password"></P>
+            <P id="display-address"></P>
+            <P id="display-branch"></P>
+
+
+        </div>
+        <script>
+            document.getElementById('login-form').addEventListener('submit',function(event){
+                event.preventDefault();
+                var name=document.getElementById('name').value;
+                var email=document.getElementById('email').value;
+                var password=document.getElementById('password').value;
+                var address=document.getElementById('address').value;
+                var branch=document.getElementById('branch').value;
+                
+
+
+
+                document.getElementById('display-name').textContent='Name:'+name;
+                document.getElementById('display-email').textContent='Email:'+email;
+                document.getElementById('display-password').textContent='Password:'+password;
+                document.getElementById('display-address').textContent='Address:'+address;
+                document.getElementById('display-branch').textContent='Branch:'+branch;
+                
+
+
+                document.getElementById('form-section').classList.add('hidden');
+                document.getElementById('display-sec').classList.remove('hidden');
+            });
+
+        </script>    
+
+</html>
